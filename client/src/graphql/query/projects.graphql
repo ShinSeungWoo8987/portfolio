@@ -1,0 +1,32 @@
+query Projects {
+  projects {
+    error {
+      field
+      message
+    }
+    projects {
+      id
+      title
+      subtitle
+      platform
+      domain
+      func
+      github
+
+      background_up_color
+      background_down_color
+      line_color
+      font_color
+
+      front_end
+      back_end
+      database
+      cloud
+
+      project_img {
+        order
+        url
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+!!! 참고 https://typegraphql.com/docs/installation.html
+
+* npm과 yarn 혼용하여 사용하지 말것. (yarn으로 통일해서 사용했음)
+
+* yarn init -y
+
+ - packgage.json파일 수정
+    "scripts": {
+        "start": "node dist/index.js",
+        "dev": "nodemon src/index.ts",
+        "build": "tsc -p ."
+    }
+
+* tsc --init
+ - tsconfig.json파일 수정 (type-graphql을 사용하기 위해)
+    {
+    "compilerOptions": {
+        "target": "es2018",
+        "module": "commonjs",
+        "lib": ["es2018", "esnext.asynciterable"],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+        }
+    }
+
+* index.ts 파일 생성 (type-graphql을 사용하기 위해)
+ - yarn add reflect-metadata
+ - index.ts 상단에 import 'reflect-metadata'; 추가.
+
+
+index.ts 작성
+applyMiddleware를 사용하여 express-graphql 실행
+
+-------------

@@ -1,0 +1,13 @@
+mutation UpdateIntroduce($introduce: UpdateIntroduceInput!) {
+  updateIntroduce(introduce: $introduce) {
+    error {
+      field
+      message
+    }
+    introduce {
+      id
+      field
+      content
+    }
+  }
+}

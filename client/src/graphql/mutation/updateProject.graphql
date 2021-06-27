@@ -1,0 +1,66 @@
+mutation UpdateProject(
+  $id: String!
+  $platform: String!
+  $subtitle: String!
+  $title: String!
+  $domain: String!
+  $github: String!
+  $func: String!
+  $background_up_color: String!
+  $background_down_color: String!
+  $line_color: String!
+  $font_color: String!
+  $back_end: [String!]!
+  $front_end: [String!]!
+  $database: [String!]!
+  $cloud: [String!]!
+  $project_img: [ProjectImgInput!]!
+) {
+  updateProject(
+    project: {
+      id: $id
+      platform: $platform
+      subtitle: $subtitle
+      title: $title
+      domain: $domain
+      github: $github
+      func: $func
+      background_up_color: $background_up_color
+      background_down_color: $background_down_color
+      line_color: $line_color
+      font_color: $font_color
+    }
+
+    back_end: $back_end
+    front_end: $front_end
+    database: $database
+    cloud: $cloud
+    project_img: $project_img
+  ) {
+    error {
+      field
+      message
+    }
+    project {
+      id
+      title
+      subtitle
+      background_up_color
+      background_down_color
+      line_color
+      font_color
+      platform
+      domain
+      func
+      github
+      front_end
+      back_end
+      database
+      cloud
+      project_img {
+        order
+        url
+      }
+    }
+  }
+}

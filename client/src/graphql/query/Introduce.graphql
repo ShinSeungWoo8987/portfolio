@@ -1,0 +1,13 @@
+query Introduce {
+  introduce {
+    error {
+      field
+      message
+    }
+    introduces {
+      id
+      field
+      content
+    }
+  }
+}

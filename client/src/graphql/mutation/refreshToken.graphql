@@ -1,0 +1,9 @@
+mutation RefreshToken($token: String!) {
+  refreshToken(token: $token) {
+    error {
+      field
+      message
+    }
+    accessToken
+  }
+}
